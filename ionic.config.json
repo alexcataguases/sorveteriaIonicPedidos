@@ -1,0 +1,7 @@
+{
+  "name": "sorveteria",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
