@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sorvetes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-card color='danger' style="text-align: center" *ngFor="let product of lista">
+      <img src="https://petshopkta.000webhostapp.com/ionic/sorveteria/uploads/foto{{product.codigo}}.jpg">
+      <ion-card-content>
+        <h2><b>{{product.produto}}</b></h2>
+        <ion-text>
+          R$ {{ product.preco | number : '1.2-2'}}</ion-text>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  
+  <ion-footer style="text-align: center">
+    <ion-toolbar color="success">
+      <ion-button href="encomendas">Faça sua encomenda agora!</ion-button>
+    </ion-toolbar>
+  </ion-footer>

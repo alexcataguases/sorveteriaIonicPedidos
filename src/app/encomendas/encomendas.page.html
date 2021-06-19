@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Encomendas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed" edge>
+    <ion-fab-button color="success">
+      <div>{{contador}}</div>
+      <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list>
+          <ion-item *ngFor="let product of lista">
+            
+            <ion-grid >
+              <ion-row style="align-items: center;justify-content: center;" [ngStyle]="{'background-color':product.quantidade == 0 ? 'rgb(255, 255, 255)' : 'rgb(255, 254, 170)' }"> 
+                
+                <ion-col size=3  class="ion-no-padding" style="text-align: right">
+                   <img src="https://petshopkta.000webhostapp.com/ionic/sorveteria/uploads/foto{{product.codigo}}.jpg" width=80px height=80px>    
+                </ion-col>
+            
+
+
+              <ion-col>
+                <b>{{product.produto}}</b>
+                <ion-text color="danger"><br><small>{{ product.tipo}}</small></ion-text>
+                <ion-text color="secondary">
+                <p>R$ {{ product.preco | number : '1.2-2'}}</p>
+              </ion-text>
+              </ion-col>
+
+              <ion-col size=5>
+                        <ion-row style="display: flex; align-items: center;justify-content: center;">
+                          <ion-col class="ion-no-padding" style="text-align: right">
+                                <ion-button color="primary"  size="small" (click)="decreaseProduto(product)">
+                                  <ion-icon name="remove"></ion-icon>
+                                </ion-button>
+                          </ion-col>
+                          <ion-col size=2 class="ion-no-padding" style="text-align: center">
+                            <ion-text color="secondary"><h3>{{product.quantidade}}</h3></ion-text>
+                          </ion-col>
+                          <ion-col class="ion-no-padding" style="text-align: left">
+                              <ion-button  color="primary" size="small" (click)="addProduto(product)">
+                                <ion-icon name="add" ></ion-icon>
+                              </ion-button>
+                          </ion-col>
+                      </ion-row>
+              </ion-col>
+
+              </ion-row>     
+              </ion-grid>
+          </ion-item>
+</ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="success">
+    <ion-title >Total: <b>R$ {{ valorTotal | number : '1.2-2'}}</b></ion-title>
+    <ion-button  color="primary" slot="end" (click)="encomendar()">
+      <ion-icon slot="end" name="logo-whatsapp"></ion-icon>
+      Encomendar
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
