@@ -14,6 +14,9 @@
       <div>{{contador}}</div>
       <ion-icon name="cart"></ion-icon>
     </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button (click)="esvaziarCarrinho()"><ion-icon name="trash"></ion-icon></ion-fab-button>
+    </ion-fab-list>
   </ion-fab>
 
   <ion-list>

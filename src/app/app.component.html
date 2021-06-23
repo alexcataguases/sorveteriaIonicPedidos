@@ -1,11 +1,12 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
+      <ion-header [translucent]="true">
+        <img src="https://petshopkta.000webhostapp.com/ionic/sorveteria/uploads/logo2.jpg" />
+      </ion-header>
       <ion-content>
+ 
         <ion-list id="inbox-list">
-          <ion-list-header>Sorveteria MG</ion-list-header>
-          <ion-note>Esfrie a mente!</ion-note>
-
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>

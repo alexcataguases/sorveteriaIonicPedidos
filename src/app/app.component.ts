@@ -11,6 +11,7 @@ export class AppComponent {
     { title: 'Sorvetes', url: 'sorvete', icon: 'ice-cream' },
     { title: 'Picolés', url: 'picole', icon: 'bonfire' },
     { title: 'Encomendas', url: 'encomendas', icon: 'cart' },
+    { title: 'Contatos', url: 'contatos', icon: 'call' },
     
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
